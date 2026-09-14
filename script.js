@@ -149,3 +149,57 @@ window.addEventListener("scroll", () => {
         navbar.style.boxShadow = "none";
     }
 });
+/* ==========================================
+   6. FITUR POPUP / LIGHTBOX FOTO FULLSCREEN
+   ========================================== */
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgFull");
+    const captionText = document.getElementById("modalCaption");
+    const closeBtn = document.querySelector(".modal-close");
+
+    // Ambil semua foto (Foto Kelas, Foto Guru, Foto Murid)
+    const allImages = document.querySelectorAll(".photo-card img, .teacher-img img, .student-img-box img");
+
+    allImages.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.classList.add("show");
+            modalImg.src = this.src;
+
+            // Ambil nama/keterangan dari teks terdekat jika ada
+            let caption = this.alt;
+            
+            // Jika foto murid, ambil nama muridnya
+            const studentDetails = this.closest('.student-card');
+            if (studentDetails) {
+                const studentName = studentDetails.querySelector('h4').textContent;
+                const studentNo = studentDetails.querySelector('.student-no').textContent;
+                caption = `${studentNo} — ${studentName}`;
+            }
+
+            // Jika foto kelas, ambil caption foto
+            const photoCaption = this.closest('.photo-card');
+            if (photoCaption && photoCaption.querySelector('.photo-caption h3')) {
+                caption = photoCaption.querySelector('.photo-caption h3').textContent;
+            }
+
+            captionText.textContent = caption;
+        });
+    });
+
+    // Fungsi Tutup Modal jika tombol X diklik
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            modal.classList.remove("show");
+        });
+    }
+
+    // Fungsi Tutup Modal jika area di luar gambar diklik
+    if (modal) {
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+            }
+        });
+    }
+});
