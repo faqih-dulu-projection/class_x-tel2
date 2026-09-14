@@ -1,0 +1,771 @@
+/* ==========================================
+   RESET & VARIABLE SYSTEM (LUXURY THEME)
+   ========================================== */
+:root {
+    --bg-dark: #090d16;
+    --bg-card: rgba(18, 24, 38, 0.7);
+    --bg-card-hover: rgba(28, 36, 56, 0.85);
+    --primary: #38bdf8;
+    --primary-glow: rgba(56, 189, 248, 0.35);
+    --gold: #f59e0b;
+    --gold-glow: rgba(245, 158, 11, 0.3);
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(56, 189, 248, 0.2);
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.dark-bg {
+    background-color: rgba(5, 8, 15, 0.6);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* ==========================================
+   HEADER & SECTION TITLES
+   ========================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sub-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.section-desc {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* ==========================================
+   NAVBAR (GLASSMORPHISM)
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(9, 13, 22, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo-accent {
+    color: var(--gold);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-menu a {
+    color: var(--text-sub);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.nav-clock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid var(--border-glow);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: var(--transition);
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 140px 24px 80px;
+    background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.12) 0%, rgba(9, 13, 22, 1) 70%);
+}
+
+.hero-content {
+    max-width: 850px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.badge-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--gold-glow);
+    border-radius: 30px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+/* Realtime Banner */
+.realtime-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    padding: 16px 28px;
+    border-radius: 16px;
+    margin: 0 auto 40px;
+    width: fit-content;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.rt-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.rt-item i {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.rt-item small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    text-transform: uppercase;
+}
+
+.rt-item strong {
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.rt-divider {
+    width: 1px;
+    height: 30px;
+    background: var(--border);
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #090d16;
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   3 FOTO HIGHLIGHT KELAS
+   ========================================== */
+.class-photos-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 220px);
+    gap: 20px;
+}
+
+.photo-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.photo-card.feature-large {
+    grid-row: span 2;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(9, 13, 22, 0.95), transparent);
+}
+
+.photo-caption h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.photo-caption p {
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+/* ==========================================
+   TENTANG KELAS / FILOSOFI
+   ========================================== */
+.about-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin: 16px 0;
+    line-height: 1.3;
+}
+
+.about-text p {
+    color: var(--text-sub);
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.stat-box h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+
+.stat-box p {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin: 0;
+}
+
+/* ==========================================
+   WALI KELAS CARD
+   ========================================== */
+.teacher-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.teacher-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--gold);
+}
+
+.teacher-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teacher-badge {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--gold);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.teacher-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin: 10px 0 4px;
+}
+
+.teacher-nip {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin-bottom: 16px;
+}
+
+.teacher-quote {
+    font-style: italic;
+    color: var(--text-sub);
+    border-left: 3px solid var(--primary);
+    padding-left: 16px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   DATABASE 36 SISWA (MODERN GRID)
+   ========================================== */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.student-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-glow);
+    background: var(--bg-card-hover);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.student-img-box {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    background: #111726;
+    overflow: hidden;
+}
+
+.student-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tampilan Khusus Jika SENSURED/PRIVASI */
+.student-img-box.privacy-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: radial-gradient(circle, #1a2336 0%, #0d121d 100%);
+    color: var(--text-sub);
+}
+
+.student-img-box.privacy-box i {
+    font-size: 2.5rem;
+    color: #475569;
+}
+
+.student-img-box.privacy-box span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+/* Jabatan Tag */
+.role-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(9, 13, 22, 0.85);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.role-tag.leader {
+    color: var(--gold);
+    border-color: var(--gold-glow);
+}
+
+.student-details {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.student-no {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(56, 189, 248, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.student-details h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================
+   JADWAL PELAJARAN TAB
+   ========================================== */
+.schedule-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-sub);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background: var(--primary);
+    color: #090d16;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.tab-content {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tab-content.active {
+    display: flex;
+}
+
+.subject-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 18px 24px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subject-card .time {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--gold);
+    background: rgba(245, 158, 11, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.subject-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.subject-card.break {
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.2);
+    text-align: center;
+    justify-content: center;
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    background: #05080f;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-socials a {
+    color: var(--text-sub);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================
+   RESPONSIVE (MOBILE FRIENDLY)
+   ========================================== */
+@media (max-width: 992px) {
+    .class-photos-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .photo-card.feature-large {
+        grid-row: span 1;
+        height: 300px;
+    }
+    .photo-card {
+        height: 220px;
+    }
+    .teacher-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .teacher-quote {
+        border-left: none;
+        border-top: 2px solid var(--primary);
+        padding-left: 0;
+        padding-top: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-dark);
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+        transition: 0.3s;
+        border-bottom: 1px solid var(--border);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .realtime-banner {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .rt-divider {
+        width: 100%;
+        height: 1px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

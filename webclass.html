@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X TEL 2 — Nuansa Modern & High-Tech</title>
+    
+    <!-- Google Fonts untuk Tampilan Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Eksternal (Akan kita buat di balasan berikutnya) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGASI / NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-accent">X</span> TEL 2
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#walikelas">Wali Kelas</a></li>
+                <li><a href="#students">Siswa (36)</a></li>
+                <li><a href="#schedule">Jadwal</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+            </ul>
+            <!-- Widget Jam Realtime di Navbar -->
+            <div class="nav-clock">
+                <i class="fa-regular fa-clock"></i>
+                <span id="nav-time">00:00:00</span>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (JUDUL MEGAH & BANNER) -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="badge-tag">OFFICIAL CLASS WEBSITE</div>
+            <h1 class="hero-title">MENGALIRKAN KARYA, <span class="gradient-text">MERANCANG MASA DEPAN</span></h1>
+            <p class="hero-subtitle">
+                Bukan sekadar merangkai komponen, kami adalah X TEL 2 yang sedang merancang alur kesuksesan bersama.
+            </p>
+            
+            <!-- Realtime Info Banner -->
+            <div class="realtime-banner">
+                <div class="rt-item">
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <div>
+                        <small>Hari & Tanggal</small>
+                        <strong id="rt-date">Senin, 1 Januari 2026</strong>
+                    </div>
+                </div>
+                <div class="rt-divider"></div>
+                <div class="rt-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <div>
+                        <small>Status Kelas</small>
+                        <strong id="rt-status">Kegiatan Belajar Mengajar</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#students" class="btn btn-primary"><i class="fa-solid fa-users"></i> Lihat Anggota</a>
+                <a href="#schedule" class="btn btn-outline"><i class="fa-solid fa-calendar-alt"></i> Jadwal Pelajaran</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 FOTO KELAS UTAMA / HIGHLIGHT -->
+    <section id="gallery-highlights" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">MEMORIES</span>
+                <h2 class="main-title">Potret Kebersamaan Kita</h2>
+            </div>
+            <div class="class-photos-grid">
+                <!-- Foto Kelas 1 -->
+                <div class="photo-card feature-large">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=80" alt="Foto Bersama Kelas">
+                    <div class="photo-caption">
+                        <h3>Momen Foto Bersama Utama</h3>
+                        <p>Kenangan Indah Semester Akhir</p>
+                    </div>
+                </div>
+                <!-- Foto Kelas 2 -->
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Kegiatan Kelas">
+                    <div class="photo-caption">
+                        <h3>Kebersamaan Acara Sekolah</h3>
+                        <p>Kekompakan Tanpa Batas</p>
+                    </div>
+                </div>
+                <!-- Foto Kelas 3 -->
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Class Meeting">
+                    <div class="photo-caption">
+                        <h3>Kemenangan Class Meeting</h3>
+                        <p>Semangat Juang Bersama</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KELAS / KATA-KATA -->
+    <section id="about" class="section dark-bg">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <span class="sub-title">FILOSOFI KELAS</span>
+                    <h2>"Satu Komponen Bermasalah, Seluruh Rangkaian Terpengaruh."</h2>
+                    <p>
+                        Itulah prinsip X TEL 2. Kami percaya bahwa setiap anggota kelas adalah elemen penting yang saling melengkapi. Tanpa satu sama lain, alur kebersamaan kami tidak akan sempurna.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <h3>36</h3>
+                            <p>Siswa-Siswi</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>1</h3>
+                            <p>Tujuan Bersama</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>100%</h3>
+                            <p>Solidaritas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WALI KELAS SECTION -->
+    <section id="walikelas" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">MENTOR & PEMBIMBING</span>
+                <h2 class="main-title">Wali Kelas Kita</h2>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="Foto Wali Kelas">
+                </div>
+                <div class="teacher-info">
+                    <span class="teacher-badge">Guru Pembimbing</span>
+                    <h3>Dra. Hj. Endang Rahayu, M.Pd.</h3>
+                    <p class="teacher-nip">NIP. 19780512 200501 2 003</p>
+                    <blockquote class="teacher-quote">
+                        "Masa depan milik mereka yang menyiapkan hari ini. Belajarlah dengan hati, bukan sekadar untuk nilai, tapi untuk bekal kehidupan kalian."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANGGOTA SISWA (36 SISWA) -->
+    <section id="students" class="section dark-bg">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">DATABASE SISWA</span>
+                <h2 class="main-title">36 Anggota Kelas</h2>
+                <p class="section-desc">Gunakan foto asli atau aktifkan mode privasi jika diinginkan.</p>
+            </div>
+
+            <div class="students-grid">
+                
+                <!-- SISWA 01 (Contoh Ketua Kelas) -->
+                <div class="student-card">
+                    <div class="student-img-box">
+                        <img src="21.jpg" alt="Siswa 01">
+                        <span class="role-tag leader">Ketua Kelas</span>
+                    </div>
+                    <div class="student-details">
+                        <span class="student-no">#01</span>
+                        <h4>Muhammad Hisyam Arza</h4>
+                    </div>
+                </div>
+
+                <!-- SISWA 02 -->
+                <div class="student-card">
+                    <div class="student-img-box">
+                        <img src="3.jpg" alt="Siswa 02">
+                        <span class="role-tag">Wakil Ketua</span>
+                    </div>
+                    <div class="student-details">
+                        <span class="student-no">#02</span>
+                        <h4>Ahmad Syarifudin Khafidz</h4>
+                    </div>
+                </div>
+
+                <!-- SISWA 03 -->
+                <div class="student-card">
+                    <div class="student-img-box privacy-box">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span>PRIVASI</span>
+                    </div>
+                    <div class="student-details">
+                        <span class="student-no">#04</span>
+                        <h4>Adinda Resti Ramadhani</h4>
+                    </div>
+                </div>
+
+                <!-- SISWA 04 (CONTOH MODE PRIVASI) -->
+                <div class="student-card">
+                    <div class="student-img-box">
+                        <img src="2.jpg" alt="Siswa 03">
+                    </div>
+                    <div class="student-details">
+                        <span class="student-no">#03</span>
+                        <h4>Agung Ibnu Hale</h4>
+                    </div>
+                </div>
+
+                <!-- SISWA 05 s/d 36 (Dibuat Lengkap untuk Kamu Tinggal Edit Nama/Foto) -->
+                <div class="student-card"><div class="student-img-box"><img src="4.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#05</span><h4>Aisyah Safitri</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#06</span><h4>Alfi Rizqi Hana</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="6.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#07</span><h4>Arini Silka Qunati</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="29.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#08</span><h4>Bagus Prastyo</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="8.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#09</span><h4>Cindy Aulia Rizqi</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#10</span><h4>Devinka Nia Cipta</h4></div></div>
+                
+                <div class="student-card"><div class="student-img-box"><img src="10.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#11</span><h4>Diva Maishaluna Amasi</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#12</span><h4>Fajar Sodik Rhamadhani</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="29.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#13</span><h4>Fany Anastasya Putri</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="13.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#14</span><h4>Faqih Hadiyan</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="14.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#15</span><h4>Fika Ismatul Riska</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#16</span><h4>Halimah</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="16.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#17</span><h4>Ibrahim Muhammad Attamimi</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#18</span><h4>blankkk</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#19</span><h4>Marwa Nursavanah</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="29.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#20</span><h4>Muhammad Gumilang Alkhadavi</h4></div></div>
+
+                <div class="student-card"><div class="student-img-box"><img src="20.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#21</span><h4>MUhammad Hanan Firdaus</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="22.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#22</span><h4>Muhammad Sabar Firmansyah</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="23.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#23</span><h4>Muhammad Zahlan Fairuz Akrom</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="24.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#24</span><h4>Nada Wedyawati</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="29.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#25</span><h4>Nizam Syahputra</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#26</span><h4>Nurul Amalina</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="27.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#27</span><h4>Qotrun Nada Salsabila</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="28.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#28</span><h4>Rahma Najwa</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="29.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#29</span><h4>Raysa Nathania Aurora</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#30</span><h4>Rima Fitriani</h4></div></div>
+
+                <div class="student-card"><div class="student-img-box"><img src="31.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#31</span><h4>Sherli Amelia</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="32.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#32</span><h4>Shifa Fauzifia Imanda</h4></div></div>
+                <div class="student-card"><div class="student-img-box privacy-box"><i class="fa-solid fa-user-shield"></i><span>PRIVASI</span></div><div class="student-details"><span class="student-no">#33</span><h4>Shofiy Asyroful Maulana</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="34.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#34</span><h4>Syahir Abdallah Surur</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="29.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#35</span><h4>Tania Indriani</h4></div></div>
+                <div class="student-card"><div class="student-img-box"><img src="36.jpg" alt="Siswa"></div><div class="student-details"><span class="student-no">#36</span><h4>Zahra Kamaliyah</h4></div></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- JADWAL PELAJARAN INTERAKTIF -->
+    <section id="schedule" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">AGENDA KELAS</span>
+                <h2 class="main-title">Jadwal Pelajaran</h2>
+            </div>
+
+            <!-- Tab Tombol Hari -->
+            <div class="schedule-tabs">
+                <button class="tab-btn active" onclick="openDay(event, 'senin')">Senin</button>
+                <button class="tab-btn" onclick="openDay(event, 'selasa')">Selasa</button>
+                <button class="tab-btn" onclick="openDay(event, 'rabu')">Rabu</button>
+                <button class="tab-btn" onclick="openDay(event, 'kamis')">Kamis</button>
+                <button class="tab-btn" onclick="openDay(event, 'jumat')">Jumat</button>
+            </div>
+
+            <!-- Isi Jadwal Hari -->
+            <div class="schedule-content">
+                <div id="senin" class="tab-content active">
+                    <div class="subject-card"><span class="time">07:00 - 08:30</span><h4>Upacara & Matematika Peminatan</h4></div>
+                    <div class="subject-card"><span class="time">08:30 - 10:00</span><h4>Fisika</h4></div>
+                    <div class="subject-card break"><span>ISTIRAHAT</span></div>
+                    <div class="subject-card"><span class="time">10:15 - 12:00</span><h4>Bahasa Indonesia</h4></div>
+                </div>
+
+                <div id="selasa" class="tab-content">
+                    <div class="subject-card"><span class="time">07:00 - 09:15</span><h4>Kimia</h4></div>
+                    <div class="subject-card"><span class="time">09:15 - 10:45</span><h4>Biologi</h4></div>
+                    <div class="subject-card break"><span>ISTIRAHAT</span></div>
+                    <div class="subject-card"><span class="time">11:00 - 12:30</span><h4>Bahasa Inggris</h4></div>
+                </div>
+
+                <div id="rabu" class="tab-content">
+                    <div class="subject-card"><span class="time">07:00 - 08:30</span><h4>Matematika Wajib</h4></div>
+                    <div class="subject-card"><span class="time">08:30 - 10:00</span><h4>Pendidikan Agama</h4></div>
+                    <div class="subject-card break"><span>ISTIRAHAT</span></div>
+                    <div class="subject-card"><span class="time">10:15 - 12:00</span><h4>Sejarah Indonesia</h4></div>
+                </div>
+
+                <div id="kamis" class="tab-content">
+                    <div class="subject-card"><span class="time">07:00 - 09:15</span><h4>Penjaskes (Olahraga)</h4></div>
+                    <div class="subject-card"><span class="time">09:15 - 10:45</span><h4>PKN</h4></div>
+                    <div class="subject-card break"><span>ISTIRAHAT</span></div>
+                    <div class="subject-card"><span class="time">11:00 - 12:30</span><h4>Seni Budaya</h4></div>
+                </div>
+
+                <div id="jumat" class="tab-content">
+                    <div class="subject-card"><span class="time">07:00 - 08:30</span><h4>Prakarya & Kewirausahaan</h4></div>
+                    <div class="subject-card"><span class="time">08:30 - 10:00</span><h4>Bimbingan Konseling (BK)</h4></div>
+                    <div class="subject-card break"><span>PULANG JUMATAN</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>XII MIPA 1</h3>
+                <p>Created with Passion & Pride. © 2026 XII MIPA 1. All rights reserved.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Eksternal (Akan kita buat di balasan ke-3) -->
+    <script src="script.js"></script>
+</body>
+</html>
