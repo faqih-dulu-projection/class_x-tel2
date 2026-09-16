@@ -162,3 +162,65 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+/* ==========================================
+   6. FITUR SEARCH & PROTEKSI SANDI ("tel 2 jaya")
+   ========================================== */
+document.addEventListener("DOMContentLoaded", function () {
+    const unlockBtn = document.getElementById("unlockBtn");
+    const lockStatus = document.getElementById("lockStatus");
+    const studentsGrid = document.getElementById("studentsGrid");
+    const searchInput = document.getElementById("searchInput");
+    const studentCards = document.querySelectorAll(".student-card");
+    const noResult = document.getElementById("noResult");
+
+    let isUnlocked = false;
+
+    // A. Logika Buka Akses Sandi
+    if (unlockBtn) {
+        unlockBtn.addEventListener("click", function () {
+            if (isUnlocked) {
+                alert("Akses profil sudah terbuka!");
+                return;
+            }
+
+            const password = prompt("🔑 Masukkan Kata Sandi untuk Akses Profil Siswa:");
+
+            if (password === "tel 2 jaya") {
+                isUnlocked = true;
+                studentsGrid.classList.remove("locked");
+                lockStatus.innerHTML = '<i class="fa-solid fa-lock-open"></i> Akses Profil Terbuka';
+                lockStatus.classList.add("unlocked");
+                unlockBtn.style.display = "none";
+                alert("Sandi benar! Akses profil berhasil dibuka. ✨");
+            } else if (password !== null) {
+                alert("Sandi salah! Akses ditolak. ❌");
+            }
+        });
+    }
+
+    // B. Logika Live Search Siswa
+    if (searchInput) {
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase().trim();
+            let matches = 0;
+
+            studentCards.forEach(card => {
+                // Ambil nama dari atribut data-name atau teks h4
+                const name = card.getAttribute("data-name") || card.querySelector("h4").textContent.toLowerCase();
+
+                if (name.includes(query)) {
+                    card.style.display = "block";
+                    matches++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Tampilkan pesan jika nama tidak cocok
+            if (noResult) {
+                noResult.style.display = (matches === 0) ? "block" : "none";
+            }
+        });
+    }
+});
