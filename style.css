@@ -954,7 +954,7 @@ body {
     background-position: left center;
     
     /* Animasi jalan dari M sampai n */
-    animation: highlightSweep 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation: highlightSweep 2.5s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
     animation-delay: 0.4s; /* Jeda sedikit setelah halaman dibuka */
 }
 
