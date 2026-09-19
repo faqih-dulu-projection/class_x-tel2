@@ -942,3 +942,27 @@ body {
         flex: 0 0 auto;
     }
 }
+/* Efek Stabilo / Text Highlight Animasi */
+.highlight-text {
+    display: inline-block;
+    color: #ffffff;
+    padding: 2px 12px;
+    border-radius: 4px;
+    background-image: linear-gradient(#1d4ed8, #1d4ed8); /* Warna biru stabilo */
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left center;
+    
+    /* Animasi jalan dari M sampai n */
+    animation: highlightSweep 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s; /* Jeda sedikit setelah halaman dibuka */
+}
+
+@keyframes highlightSweep {
+    from {
+        background-size: 0% 100%;
+    }
+    to {
+        background-size: 100% 100%;
+    }
+}
