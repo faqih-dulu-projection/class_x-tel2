@@ -80,7 +80,7 @@ window.addEventListener("scroll", () => {
 
 
 /* ==========================================
-   4. FITUR POPUP / LIGHTBOX FOTO FULLSCREEN (SMOOTH)
+   4. FITUR POPUP / LIGHTBOX FOTO FULLSCREEN & CEK LOCK
    ========================================== */
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("imageModal");
@@ -88,21 +88,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const captionText = document.getElementById("modalCaption");
     const closeBtn = document.querySelector(".modal-close");
 
-    // Menambah .gallery-img agar foto momen kenangan juga bisa di-klik fullscreen
     const clickableImages = document.querySelectorAll(
         ".student-img-box img, .teacher-img img, .schedule-img, .gallery-img"
     );
 
     clickableImages.forEach(img => {
-        img.addEventListener("click", function () {
+        img.addEventListener("click", function (e) {
+            // Cek apakah gambar berada di dalam card siswa yang masih terkunci
+            const studentCard = this.closest('.student-card');
+            const studentsGrid = document.getElementById("studentsGrid");
+
+            if (studentCard && studentsGrid && studentsGrid.classList.contains("locked")) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Trigger otomatis tombol unlock
+                const unlockBtn = document.getElementById("unlockBtn");
+                if (unlockBtn) {
+                    unlockBtn.click();
+                }
+                return; // Batalkan pembukaan modal foto jika masih terkunci
+            }
+
             if (!modal || !modalImg) return;
 
             modalImg.src = this.src;
 
             let caption = this.alt || "Foto X TEL 2";
 
-            // Caption khusus profil murid
-            const studentCard = this.closest('.student-card');
+            // Caption profil murid
             if (studentCard) {
                 const nameEl = studentCard.querySelector('h4');
                 const noEl = studentCard.querySelector('.student-no');
@@ -121,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 caption = `Jadwal Pelajaran — ${this.alt}`;
             }
 
-            // Caption Galeri Foto Bersama
+            // Caption Galeri Foto
             if (this.classList.contains('gallery-img')) {
                 caption = `Dokumentasi — ${this.alt}`;
             }
@@ -150,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Tutup dengan tombol ESC di keyboard
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && modal && modal.classList.contains("show")) {
             closeModal();
