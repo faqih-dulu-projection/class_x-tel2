@@ -966,3 +966,9 @@ body {
         background-size: 100% 100%;
     }
 }
+
+/* Hilangkan efek biru-biru saat di-klik/tap di Mobile */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
